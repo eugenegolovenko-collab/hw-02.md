@@ -111,20 +111,26 @@ http://192.168.1.227/zabbix
 `Требования к результатам:`
 
 Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
+
 Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
+
 Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
-Приложите в файл README.md текст использованных команд в GitHub
+
+Приложите в файл README.md текст использованных команд в GitHub (?!!!)
 
 1. Установлен Zabbix Agent на 2 вирт.машины, одна из них мой Zabbix Server на Ubuntu, вторая - VM на Debian.
 
+<img width="1464" height="1049" alt="Zabbix_2 хоста" src="https://github.com/user-attachments/assets/7743ef7f-9fe4-4c57-b481-d050fb3905a1" />
 
 2. Лог Zabbix-agent с VM Debian:
 
+<img width="847" height="636" alt="Zabbix_client" src="https://github.com/user-attachments/assets/405051a4-d6c3-4d4d-82a1-36407c82e96d" />
 
-3. Скриншот Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные:
+4. Скриншот Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные:
 
+<img width="1465" height="1052" alt="Zabbix_monitoring" src="https://github.com/user-attachments/assets/7c4fea50-19d6-4614-9b3f-d18968de23c1" />
 
-4. Текст использованных команд /в GitHub?! - может быть настройки конфигураций клиентов?/
+5. Текст использованных команд /в GitHub?! - может быть настройки конфигураций клиентов?/
 
 `Клиент на Zabbix-server (Ubuntu)`
 
