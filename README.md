@@ -91,7 +91,9 @@ http://192.168.1.227/zabbix
 
 Авторизация: Admin / zabbix
 
-`Screenshots`
+<img width="1142" height="835" alt="Zabbix_login" src="https://github.com/user-attachments/assets/e8791864-2f9b-425b-bdfe-054c740ff43a" />
+
+<img width="1479" height="861" alt="Zabbix_dashboard" src="https://github.com/user-attachments/assets/cb357032-403e-47cf-9e60-3b652eb8be85" />
 
 ---
 
