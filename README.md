@@ -99,26 +99,71 @@ http://192.168.1.227/zabbix
 
 ### Задание 2
 
-`Приведите ответ в свободной форме........`
+`Установите Zabbix Agent на два хоста.`
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+Процесс выполнения:
+
+1. Установите Zabbix Agent на 2 вирт.машины, одной из них может быть ваш Zabbix Server.
+2. Добавьте Zabbix Server в список разрешенных серверов ваших Zabbix Agentов.
+3. Добавьте Zabbix Agentов в раздел Configuration > Hosts вашего Zabbix Servera.
+Проверьте, что в разделе Latest Data начали появляться данные с добавленных агентов.
+
+`Требования к результатам:`
+
+Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
+Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
+Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
+Приложите в файл README.md текст использованных команд в GitHub
+
+1. Установлен Zabbix Agent на 2 вирт.машины, одна из них мой Zabbix Server на Ubuntu, вторая - VM на Debian.
+
+
+2. Лог Zabbix-agent с VM Debian:
+
+
+3. Скриншот Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные:
+
+
+4. Текст использованных команд /в GitHub?! - может быть настройки конфигураций клиентов?/
+
+`Клиент на Zabbix-server (Ubuntu)`
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+sudo apt update
+sudo apt install zabbix-agent -y
+sudo nano /etc/zabbix/zabbix_agentd.conf
+.......................
+Server=127.0.0.1
+ServerActive=127.0.0.1
+Hostname=Zabbix-server
+.......................
+
+sudo systemctl restart zabbix-agent
+sudo systemctl enable zabbix-agent
+sudo systemctl status zabbix-agent
 ```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 2](ссылка на скриншот 2)`
+`Клиент на VM Debian 13.0.0`
 
+```
+sudo wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.4+debian13_all.deb
+sudo dpkg -i zabbix-release_latest_7.4+debian13_all.deb
+sudo apt update
+sudo apt install zabbix-agent2
+sudo apt install zabbix-agent2-plugin-mongodb zabbix-agent2-plugin-mssql zabbix-agent2-plugin-postgresql
+sudo systemctl restart zabbix-agent2
+sudo systemctl enable zabbix-agent2
+sudo nano /etc/zabbix/zabbix_agent2.conf
+...........................
+Server=192.168.1.227
+ServerActive=192.168.1.227
+Hostname=debian-client
+...........................
+sudo systemctl restart zabbix-agent2
+sudo systemctl enable zabbix-agent2
+sudo systemctl status zabbix-agent2
 
+sudo tail -n 20 /var/log/zabbix/zabbix_agent2.log
+```
 ---
 
